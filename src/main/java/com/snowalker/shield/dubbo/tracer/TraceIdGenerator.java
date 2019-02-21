@@ -48,7 +48,7 @@ public class TraceIdGenerator {
             Integer id = Integer.parseInt(ipAddressInArray[3 - i]);
             result = result + String.format("%02x", id);
         }
-        // 拼装实际戳及随机数
+        // 拼装时间戳及随机数
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
         result = result + simpleDateFormat.format(new Date()) + UuidUtil.getUuid().substring(0, 7);
         return result;
